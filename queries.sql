@@ -161,7 +161,7 @@ FROM employees e JOIN dept_manager m on e.emp_no = m.emp_no JOIN departments d o
 GROUP BY E.first_name, E.last_name;
 
 -- Select the name of employees without any being repeated
-SELECT first_name as NonRepeated FROM employees GROUP BY first_name HAVING COUNT(*)=1;
+SELECT DISTINCT first_name FROM employees;
 
 -- Delete all employees with a salary greater than 20,000
 DELETE e FROM employees e JOIN salaries s ON e.emp_no = s.emp_no WHERE s.salary > 20000;
